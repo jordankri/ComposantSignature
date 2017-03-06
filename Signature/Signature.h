@@ -5,18 +5,24 @@
 #include <vector>
 
 /**
-* Génere la signature relative à une transaction et une clé privé afin depouvoir authentifier la transacrtion effectué par
-* le detenteur de la clé privé.
-* data représente un array d'octets à signer et privKey la clée privée.
+* GÃ©nere la paire de clÃ© (clÃ© privÃ©e, clÃ© publique)
+*/
+std::vector<string> generate();
+
+
+/**
+* GÃ©nere la signature relative Ã  une transaction et une clÃ© privÃ© afin depouvoir authentifier la transacrtion effectuÃ© par
+* le detenteur de la clÃ© privÃ©.
+* data reprÃ©sente un array d'octets Ã  signer et privKey la clÃ©e privÃ©e.
 */
 std::string sign(const std::vector<std::uint8_t>& data, std::string privKey);
 
 
 /**
-* Permet de vérifier la véracité de la signature.
-* Grace à la clé publique, on pourra s'assurer que la transaction effectué est bien valide et à été émise par telle
+* Permet de vÃ©rifier la vÃ©racitÃ© de la signature.
+* Grace Ã  la clÃ© publique, on pourra s'assurer que la transaction effectuÃ© est bien valide et Ã  Ã©tÃ© Ã©mise par telle
 * personne.
-* data représente l'array d'octets associés à la signature et pubKey la clée publique du signataire.
+* data reprÃ©sente l'array d'octets associÃ©s Ã  la signature et pubKey la clÃ©e publique du signataire.
 */
 bool verify(const std::vector<std::uint8_t>& data, std::string signature, std::string pubKey);
 
